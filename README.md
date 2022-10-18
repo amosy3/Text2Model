@@ -8,26 +8,26 @@ We demonstrate the benefits of our approach compared to zero-shot learning from 
 
 ### The text-to-model learning problem and our architecture
 <p align="center"> 
-    <img src="/home/pc/Desktop/papers/D3A/Text2Model_git/figs/Fig1.png" width="650">
+    <img src="figs/Fig1.png" width="650">
 </p>
 
 ### T2M-HN architecture
 <p align="center"> 
-    <img src="/home/pc/Desktop/papers/D3A/Text2Model_git/figs/Fig2.png" width="650">
+    <img src="figs/Fig2.png" width="650">
 </p>
 
 
 ### Main results
 <p align="center"> 
-    <img src="/home/pc/Desktop/papers/D3A/Text2Model_git/figs/Tab1.png" width="650">
+    <img src="figs/Tab1.png" width="650">
 </p>
 
 <p align="center"> 
-    <img src="/home/pc/Desktop/papers/D3A/Text2Model_git/figs/Tab2.png" width="650">
+    <img src="figs/Tab2.png" width="650">
 </p>
 
 <p align="center"> 
-    <img src="/home/pc/Desktop/papers/D3A/Text2Model_git/figs/Tab3.png" width="650">
+    <img src="figs/Tab3.png" width="650">
 </p>
 
 

@@ -33,21 +33,31 @@ We demonstrate the benefits of our approach compared to zero-shot learning from 
 
 
 ## Installation 
+### Install Docker
+- RUN: ```sudo apt  install docker.io```
+- RUN: ```sudo groupadd docker```
+- RUN: ```sudo usermod -aG docker $USER```
+- RUN: ```newgrp docker```
+### Pull and run the docker image
 - RUN: ```docker pull amosy3/t2m:latest```
-- RUN: ```docker run -v <project_dir>:/data:rw --name <container_name> amosy3/t2m:latest```
+- RUN: ```docker run --rm -it -v <project_dir>:/data:rw --name <container_name> amosy3/t2m:latest```
 
 ## Get code and data
-- Git clone this project to your <project_dir>
-- Download and extract: 
-[awa](https://chechiklab.biu.ac.il/~amosy/awa.zip),
-[cub](https://chechiklab.biu.ac.il/~amosy/cub.zip)
-[sun](https://chechiklab.biu.ac.il/~amosy/sun.zip) 
-[descriptors](https://chechiklab.biu.ac.il/~amosy/gpt_label2descriptors.pkl)
-[attributes](https://chechiklab.biu.ac.il/~amosy/label2attributes_names.pkl) 
+- RUN: ```git clone https://github.com/amosy3/Text2Model.git```
+- RUN: ```cd Text2Model```
+- RUN: ```wget https://chechiklab.biu.ac.il/~amosy/awa.zip```
+- RUN: ```unzip awa.zip```
+- RUN: ```wget https://chechiklab.biu.ac.il/~amosy/cub.zip```
+- RUN: ```unzip cub.zip```
+- RUN: ```wget https://chechiklab.biu.ac.il/~amosy/sun.zip```
+- RUN: ```unzip sun.zip```
+- RUN: ```wget https://chechiklab.biu.ac.il/~amosy/gpt_label2descriptors.pkl```
+- RUN: ```wget https://chechiklab.biu.ac.il/~amosy/label2attributes_names.pkl```
 
 
 ## Run an experiment
-- Use ```wandb login``` to login to you wandb account
+- Use ```wandb login``` to login to you wandb account. You will be asked to paste an API key from your profile. It can be found under Profilie-> Settings-> AIP keys
+- Run: ```git config --global --add safe.directory /data```
 - Run: ```python main.py --batch_size=64 --hn_train_epochs=100 --hnet_hidden_size=120 --inner_train_epochs=3 --lr=0.005 --momentum=0.9 --weight_decay=0.0001 --text_encoder SBERT --hn_type EV```
 
 

@@ -40,7 +40,7 @@ We demonstrate the benefits of our approach compared to zero-shot learning from 
 - ```newgrp docker```
 ### Pull and run the docker image
 - ```docker pull amosy3/t2m:latest```
-- ```docker run --rm -it -v <project_dir>:/data:rw --name <container_name> amosy3/t2m:latest```
+- ```docker run --rm -it -v $(pwd):/data:rw --name text2model amosy3/t2m:latest```
 
 ## Get code and data
 - ```git clone https://github.com/amosy3/Text2Model.git```

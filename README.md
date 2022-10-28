@@ -1,6 +1,6 @@
 # Text2Model 
 
-Official implementation of ["_Text2Model: Model Induction for Zero-shot Generalization Using Task Descriptions_"](https://arxiv.org/).
+Official implementation of ["_Text2Model: Model Induction for Zero-shot Generalization Using Task Descriptions_"](https://arxiv.org/abs/2210.15182).
 
 We study the problem of generating a training-free task-dependent visual classifier from text descriptions without visual samples. 
 We analyze the symmetries of T2M, and characterize the equivariance and invariance properties of corresponding models. In light of these properties we design an architecture based on hypernetworks that given a set of new class descriptions predicts the weights for an object recognition model which classifies images from those zero-shot classes. 
@@ -56,7 +56,7 @@ We demonstrate the benefits of our approach compared to zero-shot learning from 
 
 
 ## Run an experiment
-- Use ```wandb login``` to login to you wandb account. You will be asked to paste an API key from your profile. It can be found under Profilie-> Settings-> AIP keys
+- Use ```wandb login``` to login to you wandb account. You will be asked to paste an API key from your profile. It can be found under Profilie-> Settings-> API keys
 - ```git config --global --add safe.directory /data```
 - ```python main.py --batch_size=64 --hn_train_epochs=100 --hnet_hidden_size=120 --inner_train_epochs=3 --lr=0.005 --momentum=0.9 --weight_decay=0.0001 --text_encoder SBERT --hn_type EV```
 

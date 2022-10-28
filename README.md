@@ -45,15 +45,7 @@ We demonstrate the benefits of our approach compared to zero-shot learning from 
 ## Get code and data
 - ```git clone https://github.com/amosy3/Text2Model.git```
 - ```cd Text2Model```
-- ```wget https://chechiklab.biu.ac.il/~amosy/awa.zip```
-- ```unzip awa.zip```
-- ```wget https://chechiklab.biu.ac.il/~amosy/cub.zip```
-- ```unzip cub.zip```
-- ```wget https://chechiklab.biu.ac.il/~amosy/sun.zip```
-- ```unzip sun.zip```
-- ```wget https://chechiklab.biu.ac.il/~amosy/gpt_label2descriptors.pkl```
-- ```wget https://chechiklab.biu.ac.il/~amosy/label2attributes_names.pkl```
-
+- ```./download.sh```
 
 ## Run an experiment
 - Use ```wandb login``` to login to your wandb account. You will be asked to paste an API key from your profile. It can be found under Profilie-> Settings-> API keys

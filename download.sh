@@ -1,0 +1,11 @@
+wget https://chechiklab.biu.ac.il/~amosy/awa.zip
+unzip awa.zip
+rm awa.zip
+wget https://chechiklab.biu.ac.il/~amosy/cub.zip
+unzip cub.zip
+rm cub.zip
+wget https://chechiklab.biu.ac.il/~amosy/sun.zip
+unzip sun.zip
+rm sun.zip
+wget https://chechiklab.biu.ac.il/~amosy/gpt_label2descriptors.pkl
+wget https://chechiklab.biu.ac.il/~amosy/label2attributes_names.pkl

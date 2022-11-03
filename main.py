@@ -7,7 +7,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from models import ZSCombiner, ZSCombiner_2l, HNForResnet, AOClevrNet, EVHN, IVEVHN, WWHN
 from collections import OrderedDict
-import wandb
 import os
 import sys
 import argparse
@@ -25,8 +24,6 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 def get_args():
     parser = argparse.ArgumentParser(description='Create model from domain description')
-    parser.add_argument("--wandb_project", type=str, default='D3A')
-    parser.add_argument("--wandb_user", type=str, default='amosy')
     parser.add_argument("--log_file", type=str, default='')
 
     #################################
@@ -519,8 +516,7 @@ if __name__ == '__main__':
     args = get_args()
     logger = Logger(filename='%s_%s_%s_%s' %(args.dataset, args.text_encoder, args.encode_text_as, args.log_file))
     logger.log_object(args, 'args')
-    wandb.init(config=args, entity=args.wandb_user, project='%s_%s_%s' % (args.wandb_project, args.dataset, args.text_encoder),
-               settings=wandb.Settings(start_method='fork'))
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     data, visual_features_dim = get_data(args.dataset, args.tuned_resnet)
@@ -613,7 +609,6 @@ if __name__ == '__main__':
         for split in ['eval_visual_feature_extractor', 'eval_hn', 'zs_classes']:
             metrics , descriptors_accs[split] = eval_hresnet(hnet, text_encoder, combiner, data, logger, pretext=split, metrics=metrics)
         sys.stdout.flush()
-        wandb.log(metrics)
         if metrics['hnet_acc_eval_hn'] > metrics['best_val_acc']:
             metrics['best_val_acc'] = metrics['hnet_acc_eval_hn']
             metrics['best_test_acc'] = metrics['hnet_acc_zs_classes']
@@ -626,5 +621,4 @@ if __name__ == '__main__':
                 logger.print_and_log('Warning! Text encoder did not logged!')
     logger.log_object(descriptors_accs, 'descriptors_accs')
 
-    wandb.finish()
 # AWA         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])

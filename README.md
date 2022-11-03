@@ -45,10 +45,10 @@ We demonstrate the benefits of our approach compared to zero-shot learning from 
 ## Get code and data
 - ```git clone https://github.com/amosy3/Text2Model.git```
 - ```cd Text2Model```
+- ```chmod +x download.sh```
 - ```./download.sh```
 
 ## Run an experiment
-- Use ```wandb login``` to login to your wandb account. You will be asked to paste an API key from your profile. It can be found under Profilie-> Settings-> API keys
 - ```git config --global --add safe.directory /data```
 - ```python main.py --batch_size=64 --hn_train_epochs=100 --hnet_hidden_size=120 --inner_train_epochs=3 --lr=0.005 --momentum=0.9 --weight_decay=0.0001 --text_encoder SBERT --hn_type EV```
 
